@@ -1,0 +1,37 @@
+{% extends 'client/base.html' %}
+
+{% block content %}
+
+<form role="form" method="POST" action="{{ views.oauthLogin }}">
+
+  {% csrf_token %}
+
+    <h2>TOKEN: </h2>
+    <input type="text" class="form-control" value="{{ token }}" name="token" >
+    <h2>Search By Patient ID</h2>
+
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Patient ID" name="PID">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" name="PIDSubmit" value="Go" >Go!</button>
+      </span>
+    </div>
+
+
+
+    <h2>Search By Patient Name</h2>
+
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Patient Name" name="PName">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" name="PNameSubmit" value="Go" >Go!</button>
+      </span>
+    </div>
+
+
+</form>
+
+
+{{ Plist }}
+
+{% endblock %}

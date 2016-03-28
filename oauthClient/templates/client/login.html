@@ -1,0 +1,35 @@
+{% extends 'client/base.html' %}
+
+{% block content %}
+
+
+
+<form role="form" method="POST" action="{{ views.oauthLogin }}">
+
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="text">Username:</label>
+    <input type="tetxt" class="form-control" id="username" name="username" value="admin">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="password" name="password" value="admin@1234">
+  </div>
+  <div class="form-group">
+    <label for="text">Client ID:</label>
+    <input type="tetxt" class="form-control" id="username" name="clientID" value="7FK6YzhqE94whFFSsssZM0GkJsqUuCmGrvShCjyA">
+  </div>
+  <div class="form-group">
+    <label for="text">Client Secret:</label>
+    <input width="100%" type="tetxt" class="form-control" id="username" name="clientSecret" value="7dFBEKlff5wn8QWWulYBh8Plvhtk5aTKDnHDrrGizgjM1MT4sxysCsnijJUyvanCSoUsi8T5FtR2LGEOC3xC6tAxwlX5aJonhT0s84PlHQeeQdSs2ndDysyCTAh1Nfse">
+  </div>
+
+  <div class="form-group">
+    <label for="text">Tokens:</label>
+    <input type="tetxt" class="form-control" id="username" name="token" value="{{ token }}">
+  </div>
+
+  <button type="submit" class="btn btn-default">Get Token</button>
+  <button type="submit" name="submission" value="submit" class="btn btn-default">Submit</button>
+</form>
+{% endblock %}
